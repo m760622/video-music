@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import MobileCoreServices
+import MediaPlayer
 
 
 
@@ -66,12 +67,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imagePicker.delegate = self
     }
     
     // Finished recording a video
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         if let pickedVideo:URL = info[UIImagePickerControllerMediaURL] as? URL {
             // Save video to the main photo album
             UISaveVideoAtPathToSavedPhotosAlbum(pickedVideo.relativePath, self, nil, nil)
@@ -91,10 +92,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("Saved to " + dataPath.absoluteString)
 
         }
+        
+        if MPMusicPlayerController.systemMusicPlayer.playbackState == .playing {
+            print("Music is playing")
+        } else {
+            print("Play your music")
+            //TODO: automatically resume background music when a user plays their own video
+        }
+        
         imagePicker.dismiss(animated: true, completion: {
+            //todo: make popup
+            
             // Anything you want to happen when the user saves an video
         })
     }
+    
     
     
 
