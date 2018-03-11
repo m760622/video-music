@@ -18,67 +18,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBy-lM-105">
-                                <rect key="frame" x="20" y="303.5" width="335" height="60"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="CJ3-bk-chq">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaF-Ap-xQU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The video camera that won't pause your music" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVX-UR-C1B">
+                                                <rect key="frame" x="20" y="75" width="335" height="50.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Will Said" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsl-fp-jBl">
+                                                <rect key="frame" x="20" y="461" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ak-D4-EoY">
+                                                <rect key="frame" x="20" y="285.5" width="335" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="wRE-lr-ito"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <state key="normal" title="Front" backgroundImage="enabled">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="frontButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RNS-VA-wdo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBy-lM-105">
+                                                <rect key="frame" x="20" y="175.5" width="335" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="cay-aB-G6q"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <state key="normal" title="Rear" backgroundImage="enabled">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KeN-HF-CFh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Dsl-fp-jBl" secondAttribute="bottom" constant="20" id="3ck-ki-WRV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dsl-fp-jBl" secondAttribute="trailing" constant="20" id="5tm-35-z3P"/>
+                                            <constraint firstItem="DBy-lM-105" firstAttribute="top" secondItem="QVX-UR-C1B" secondAttribute="bottom" constant="50" id="7nc-up-f6W"/>
+                                            <constraint firstItem="QVX-UR-C1B" firstAttribute="top" secondItem="NaF-Ap-xQU" secondAttribute="top" constant="75" id="CTP-dZ-WJA"/>
+                                            <constraint firstItem="4ak-D4-EoY" firstAttribute="top" secondItem="DBy-lM-105" secondAttribute="bottom" constant="50" id="FoX-6n-VQA"/>
+                                            <constraint firstItem="QVX-UR-C1B" firstAttribute="leading" secondItem="NaF-Ap-xQU" secondAttribute="leading" constant="20" id="HfV-Ng-bpV"/>
+                                            <constraint firstAttribute="trailing" secondItem="QVX-UR-C1B" secondAttribute="trailing" constant="20" id="IoI-x0-uto"/>
+                                            <constraint firstItem="4ak-D4-EoY" firstAttribute="leading" secondItem="NaF-Ap-xQU" secondAttribute="leading" constant="20" id="L3b-Zl-Sw7"/>
+                                            <constraint firstItem="DBy-lM-105" firstAttribute="leading" secondItem="NaF-Ap-xQU" secondAttribute="leading" constant="20" id="Ls7-3L-tjB"/>
+                                            <constraint firstAttribute="trailing" secondItem="DBy-lM-105" secondAttribute="trailing" constant="20" id="QRl-ES-63P"/>
+                                            <constraint firstItem="Dsl-fp-jBl" firstAttribute="leading" secondItem="NaF-Ap-xQU" secondAttribute="leading" constant="20" id="Zeb-pb-ZU5"/>
+                                            <constraint firstAttribute="trailing" secondItem="4ak-D4-EoY" secondAttribute="trailing" constant="20" id="tgV-Od-O0E"/>
+                                            <constraint firstItem="Dsl-fp-jBl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4ak-D4-EoY" secondAttribute="bottom" constant="20" id="uod-Uy-BQQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="cay-aB-G6q"/>
+                                    <constraint firstAttribute="bottom" secondItem="NaF-Ap-xQU" secondAttribute="bottom" id="DsQ-8t-v7o"/>
+                                    <constraint firstItem="NaF-Ap-xQU" firstAttribute="height" secondItem="CJ3-bk-chq" secondAttribute="height" id="EUd-6F-rL4"/>
+                                    <constraint firstItem="NaF-Ap-xQU" firstAttribute="width" secondItem="CJ3-bk-chq" secondAttribute="width" id="HQd-hu-vIm"/>
+                                    <constraint firstItem="NaF-Ap-xQU" firstAttribute="top" secondItem="CJ3-bk-chq" secondAttribute="top" id="cDG-zD-AP4"/>
+                                    <constraint firstAttribute="trailing" secondItem="NaF-Ap-xQU" secondAttribute="trailing" id="fJq-68-0KQ"/>
+                                    <constraint firstItem="NaF-Ap-xQU" firstAttribute="leading" secondItem="CJ3-bk-chq" secondAttribute="leading" id="tb0-04-a6C"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <state key="normal" title="Rear" backgroundImage="enabled">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KeN-HF-CFh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The video camera that won't pause your music" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVX-UR-C1B">
-                                <rect key="frame" x="20" y="136" width="335" height="147.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Will Said" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsl-fp-jBl">
-                                <rect key="frame" x="100" y="577" width="175" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ak-D4-EoY">
-                                <rect key="frame" x="20" y="393.5" width="335" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="wRE-lr-ito"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <state key="normal" title="Front" backgroundImage="enabled">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="frontButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RNS-VA-wdo"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QVX-UR-C1B" secondAttribute="trailing" constant="20" id="1Au-Dq-Ett"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dsl-fp-jBl" secondAttribute="bottom" constant="20" id="1bw-gG-c7e"/>
-                            <constraint firstItem="QVX-UR-C1B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1fV-JH-QDX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ak-D4-EoY" secondAttribute="trailing" constant="20" id="QK2-9T-nqL"/>
-                            <constraint firstItem="DBy-lM-105" firstAttribute="top" secondItem="QVX-UR-C1B" secondAttribute="bottom" constant="20" id="QkR-hx-NGV"/>
-                            <constraint firstItem="Dsl-fp-jBl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YlW-hK-ax5"/>
-                            <constraint firstItem="4ak-D4-EoY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="e7s-0R-5oT"/>
-                            <constraint firstItem="4ak-D4-EoY" firstAttribute="top" secondItem="DBy-lM-105" secondAttribute="bottom" constant="30" id="fI3-A7-tGi"/>
-                            <constraint firstItem="DBy-lM-105" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kFT-lU-lOa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DBy-lM-105" secondAttribute="trailing" constant="20" id="lrO-YW-8rn"/>
-                            <constraint firstItem="DBy-lM-105" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rse-HP-BLV"/>
-                            <constraint firstItem="QVX-UR-C1B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="uBY-U6-i4w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CJ3-bk-chq" secondAttribute="bottom" id="Q6N-xO-xRg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CJ3-bk-chq" secondAttribute="trailing" id="VNR-TH-UwK"/>
+                            <constraint firstItem="CJ3-bk-chq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fT7-9A-Afv"/>
+                            <constraint firstItem="CJ3-bk-chq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nuV-Kx-C7k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mideo" id="Kbi-7d-m64"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="camPreview" destination="8bC-Xf-vdC" id="P2a-l1-Tvy"/>
                         <outlet property="cameraButton" destination="DBy-lM-105" id="52n-bZ-sbR"/>
+                        <outlet property="scrollView" destination="CJ3-bk-chq" id="9db-Gt-RmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,9 +116,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C6i-75-qid" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="FC2-S9-Ytb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="FC2-S9-Ytb">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
