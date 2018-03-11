@@ -11,8 +11,6 @@
 import UIKit
 import AVFoundation
 import MobileCoreServices
-import MediaPlayer
-
 
 
 
@@ -23,8 +21,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let saveFileName = UUID().uuidString
     
     @IBOutlet weak var cameraButton: UIButton!
-    
     @IBOutlet weak var scrollView: UIScrollView!
+    
     
     
     override func viewDidLoad() {
@@ -64,9 +62,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.videoQuality = .typeHigh
             
             if front {
-                imagePicker.cameraDevice = .front
+                if UIImagePickerController.isCameraDeviceAvailable(.front) {
+                    imagePicker.cameraDevice = .front
+                } else {
+                    noCameraAlert()
+                    return
+                }
             } else {
-                imagePicker.cameraDevice = .rear
+                if UIImagePickerController.isCameraDeviceAvailable(.rear) {
+                    imagePicker.cameraDevice = .rear
+                } else {
+                    noCameraAlert()
+                    return
+                }
             }
             
             fixAudio()
@@ -76,20 +84,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             fixAudio()
             
         }  else {
-            //no camera found -- alert the user.
-            let alertVC = UIAlertController(
-                title: "No Camera",
-                message: "Sorry, this device has no camera",
-                preferredStyle: .alert)
-            let okAction = UIAlertAction(
-                title: "OK",
-                style:.default,
-                handler: nil)
-            alertVC.addAction(okAction)
-            present(
-                alertVC,
-                animated: true,
-                completion: nil)
+            noCameraAlert()
         }
     }
     
@@ -163,6 +158,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             completion: nil)
     }
     
+    
+    
+    
+    func noCameraAlert() {
+        //no camera found -- alert the user.
+        let alertVC = UIAlertController(
+            title: "Camera Failed",
+            message: "No camera found",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(
+            alertVC,
+            animated: true,
+            completion: nil)
+    }
     
         
     func fixAudio() {
