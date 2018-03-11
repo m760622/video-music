@@ -12,6 +12,9 @@
 		85149E632044F9EA0057A624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85149E612044F9EA0057A624 /* Main.storyboard */; };
 		85149E652044F9EA0057A624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85149E642044F9EA0057A624 /* Assets.xcassets */; };
 		85149E682044F9EA0057A624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85149E662044F9EA0057A624 /* LaunchScreen.storyboard */; };
+		851554B920549154001A170B /* CameraOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851554B720549154001A170B /* CameraOverlayViewController.swift */; };
+		851554BA20549154001A170B /* CameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 851554B820549154001A170B /* CameraOverlayViewController.xib */; };
+		851554BC2054919B001A170B /* CameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851554BB2054919B001A170B /* CameraOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		85149E642044F9EA0057A624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85149E672044F9EA0057A624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85149E692044F9EA0057A624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		851554B720549154001A170B /* CameraOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraOverlayViewController.swift; sourceTree = "<group>"; };
+		851554B820549154001A170B /* CameraOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraOverlayViewController.xib; sourceTree = "<group>"; };
+		851554BB2054919B001A170B /* CameraOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 		85149E5C2044F9EA0057A624 /* Video Music */ = {
 			isa = PBXGroup;
 			children = (
+				851554B720549154001A170B /* CameraOverlayViewController.swift */,
+				851554B820549154001A170B /* CameraOverlayViewController.xib */,
+				851554BB2054919B001A170B /* CameraOverlayView.swift */,
 				85149E5D2044F9EA0057A624 /* AppDelegate.swift */,
 				85149E5F2044F9EA0057A624 /* ViewController.swift */,
 				85149E612044F9EA0057A624 /* Main.storyboard */,
@@ -125,6 +134,7 @@
 			files = (
 				85149E682044F9EA0057A624 /* LaunchScreen.storyboard in Resources */,
 				85149E652044F9EA0057A624 /* Assets.xcassets in Resources */,
+				851554BA20549154001A170B /* CameraOverlayViewController.xib in Resources */,
 				85149E632044F9EA0057A624 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851554BC2054919B001A170B /* CameraOverlayView.swift in Sources */,
 				85149E602044F9EA0057A624 /* ViewController.swift in Sources */,
 				85149E5E2044F9EA0057A624 /* AppDelegate.swift in Sources */,
+				851554B920549154001A170B /* CameraOverlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

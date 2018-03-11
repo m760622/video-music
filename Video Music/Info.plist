@@ -3,15 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>&quot;hi&quot;</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>&quot;video&quot;</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>&quot;video&quot;</string>
+	<string>Save Video to Device</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Mic</string>
+	<string>Microphone Needed</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Camera</string>
+	<string>Camera Needed</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
