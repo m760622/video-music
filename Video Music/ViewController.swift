@@ -102,26 +102,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.dismiss(animated: true, completion: nil)
         
         if let pickedVideo:URL = info[UIImagePickerControllerMediaURL] as? URL {
-            
+        
             // Save video to the main photo album
             UISaveVideoAtPathToSavedPhotosAlbum(pickedVideo.relativePath, self, nil, nil)
 
-            // Save the video to the app directory so we can play it later
-            let videoData = try? Data(contentsOf: pickedVideo)
-            let paths = NSSearchPathForDirectoriesInDomains(
-                FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-            let documentsDirectory: URL = URL(fileURLWithPath: paths[0])
-            let dataPath = documentsDirectory.appendingPathComponent(saveFileName)
-            
-            do {
-                try videoData?.write(to: dataPath, options: [])
-            } catch let error as NSError {
-                print(error)
-                failureAlert()
-                return
-            }
+//            // Save the video to the app directory so we can play it later
+//            let videoData = try? Data(contentsOf: pickedVideo)
+//            let paths = NSSearchPathForDirectoriesInDomains(
+//                FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+//            let documentsDirectory: URL = URL(fileURLWithPath: paths[0])
+//            let dataPath = documentsDirectory.appendingPathComponent(saveFileName)
+//
+//            do {
+//                try videoData?.write(to: dataPath, options: [])
+//            } catch let error as NSError {
+//                print(error)
+//                failureAlert()
+//                return
+//            }
 
-            print("Saved to " + dataPath.absoluteString)
+//            print("Saved to " + dataPath.absoluteString)
             
             let alertVC = UIAlertController(
                 title: "Success",
