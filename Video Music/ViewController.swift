@@ -11,7 +11,11 @@
 import UIKit
 import AVFoundation
 import MobileCoreServices
+import StoreKit
 
+let defaults = UserDefaults.standard
+var howManyTimesOpenedApp = defaults.integer(forKey: "timesOpened")
+var hasReviewed = defaults.bool(forKey: "hasReviewed")
 
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -23,16 +27,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var rearButton: UIButton!
+    @IBOutlet weak var frontButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-
+        
+        frontButton.layer.cornerRadius = 10
+        rearButton.layer.cornerRadius = 10
+        
         let screensize: CGRect = UIScreen.main.bounds
         let screenWidth = screensize.width
         let screenHeight = screensize.height
         scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        
+        
     }
     
 
@@ -105,23 +116,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
             // Save video to the main photo album
             UISaveVideoAtPathToSavedPhotosAlbum(pickedVideo.relativePath, self, nil, nil)
-
-//            // Save the video to the app directory so we can play it later
-//            let videoData = try? Data(contentsOf: pickedVideo)
-//            let paths = NSSearchPathForDirectoriesInDomains(
-//                FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-//            let documentsDirectory: URL = URL(fileURLWithPath: paths[0])
-//            let dataPath = documentsDirectory.appendingPathComponent(saveFileName)
-//
-//            do {
-//                try videoData?.write(to: dataPath, options: [])
-//            } catch let error as NSError {
-//                print(error)
-//                failureAlert()
-//                return
-//            }
-
-//            print("Saved to " + dataPath.absoluteString)
             
             let alertVC = UIAlertController(
                 title: "Success",
@@ -136,6 +130,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 alertVC,
                 animated: true,
                 completion: nil)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                if howManyTimesOpenedApp >= 3 && hasReviewed == false {
+                    if #available( iOS 10.3,*) {
+                        SKStoreReviewController.requestReview()
+                    }
+                    hasReviewed = true
+                    defaults.set(hasReviewed, forKey: "hasReviewed")
+                }
+            })
         } else {
             failureAlert()
         }

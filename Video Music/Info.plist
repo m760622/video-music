@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Need to use captured video</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -19,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.01</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
@@ -27,11 +25,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Camera Needed</string>
+	<string>Mideo requires access to the camera in order to record videos.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Microphone Needed</string>
+	<string>Mideo requires access to the microphone in order to include sound in the videos you record.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Save Video to Device</string>
+	<string>Mideo requires the ability to add to your photo library in order to save the videos you record to your phone.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Mideo requires access to your photo library in order to replay the videos you recorded.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>

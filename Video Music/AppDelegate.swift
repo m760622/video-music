@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @objc func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        howManyTimesOpenedApp += 1
+        defaults.set(howManyTimesOpenedApp, forKey: "timesOpened")
+        print("howManyTimesOpenedApp : " + String(howManyTimesOpenedApp))
+
         do {
             _ = try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, with: .mixWithOthers)
             try AVAudioSession.sharedInstance().setMode(AVAudioSessionModeDefault)
